@@ -126,3 +126,7 @@ button {
 button:hover {
     background:#0EA5E9;
 }
+#weather-icon{
+    width:100px;
+    height:100px;
+}
