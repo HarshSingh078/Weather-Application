@@ -97,8 +97,8 @@ icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
     clouds.textContent = data.clouds.all + "%";
   } catch (error) {
     console.log(error);
-    // alert("City not found!");
-    alert(error.message)
+    alert("City not found!");
+    // alert(error.message)
   }
 }
 
