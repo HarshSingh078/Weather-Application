@@ -48,6 +48,14 @@ async function getWeather(city) {
         const day = card.querySelector(".forecast-day") ;
         const icon = card.querySelector(".forecast-icon") ;
         const temp = card.querySelector(".forecast-temp")
+        const date = new Date(forecast.dt_txt);
+
+        day.textContent = date.toLocaleDateString("en-US", {
+    weekday: "short"
+});
+        const iconCode = forecast.weather[0].icon ;
+icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    temp.textContent = `${Math.round(forecast.main.temp_max)}° / ${Math.round(forecast.main.temp_min)}°`;
     })
 
     console.log(dailyForecast);
@@ -89,7 +97,8 @@ async function getWeather(city) {
     clouds.textContent = data.clouds.all + "%";
   } catch (error) {
     console.log(error);
-    alert("City not found!");
+    // alert("City not found!");
+    alert(error.message)
   }
 }
 
